@@ -1,0 +1,62 @@
+﻿@model Proyecto_Cl2_Maribel.Models.Postulante
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<h2>Eliminar Postulante</h2>
+
+<h3>¿Estas seguro que quieres eliminar este postulante?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.idPostulante)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idPostulante)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dniPostulante)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dniPostulante)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nombresPostulante)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nombresPostulante)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.apellidosPostulante)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.apellidosPostulante)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nombreColegio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nombreColegio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.anioEgreso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.anioEgreso)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nombreCarrera)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nombreCarrera)
+        </dd>
+
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="idPostulante" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Regresar</a>
+    </form>
+</div>

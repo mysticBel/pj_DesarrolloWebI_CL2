@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Proyecto_Cl2_Maribel.Models.Postulante>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de Postulantes</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-info">Nuevo Postulante</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idPostulante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dniPostulante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombresPostulante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apellidosPostulante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreColegio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.anioEgreso)
+            </th>
+            <!--<th>
+                @Html.DisplayNameFor(model => model.idCarrera)
+            </th>-->
+            <th>
+                @Html.DisplayNameFor(model => model.nombreCarrera)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idPostulante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dniPostulante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombresPostulante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellidosPostulante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreColegio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anioEgreso)
+            </td>
+            <!--<td>
+                @Html.DisplayFor(modelItem => item.idCarrera)
+                </td>-->
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreCarrera)
+            </td>
+            <td>
+                    @Html.ActionLink("Editar", "Edit", new { idPostulante=item.idPostulante }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { idPostulante=item.idPostulante })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

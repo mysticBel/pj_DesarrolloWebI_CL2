@@ -1,0 +1,65 @@
+﻿@model Proyecto_Cl2_Maribel.Models.Postulante
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editar Postulante</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="idPostulante" class="control-label"></label>
+                <input asp-for="idPostulante" class="form-control" readonly="readonly" />
+                <span asp-validation-for="idPostulante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dniPostulante" class="control-label"></label>
+                <input asp-for="dniPostulante" class="form-control" />
+                <span asp-validation-for="dniPostulante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nombresPostulante" class="control-label"></label>
+                <input asp-for="nombresPostulante" class="form-control" />
+                <span asp-validation-for="nombresPostulante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="apellidosPostulante" class="control-label"></label>
+                <input asp-for="apellidosPostulante" class="form-control" />
+                <span asp-validation-for="apellidosPostulante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nombreColegio" class="control-label"></label>
+                <input asp-for="nombreColegio" class="form-control" />
+                <span asp-validation-for="nombreColegio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="anioEgreso" class="control-label"></label>
+                <input asp-for="anioEgreso" class="form-control" />
+                <span asp-validation-for="anioEgreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idCarrera" class="control-label"></label>
+                <!--agregar selectlist combobox-->
+                <select asp-for="idCarrera" asp-items="@ViewBag.carreras" class="form-control"></select>
+                <span asp-validation-for="idCarrera" class="text-danger"></span>
+            </div>
+            <!--<div class="form-group">
+                <label asp-for="nombreCarrera" class="control-label"></label>
+                <input asp-for="nombreCarrera" class="form-control" />
+                <span asp-validation-for="nombreCarrera" class="text-danger"></span>
+            </div>-->
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <a class="btn btn-danger" asp-action="Index" asp-controller="Postulante">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div>
+    @ViewBag.mensaje
+</div>
